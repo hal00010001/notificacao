@@ -1,3 +1,34 @@
 spring:
   application:
     name: notificacao
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${username}
+    password: ${password}
+    protocol: smtp
+    properties:
+      mail:
+        smtp:
+          socketFactory:
+            port: 465
+            class: javax.net.ssl.SSLSocketFactory
+            fallback: false
+          auth: true
+          starttls:
+            enable: true
+          connectiontimeout: 5000
+          timeout: 3000
+          writetimeout: 5000
+
+  thymefeaf:
+    enable: true
+
+envio:
+  email:
+    remetente: ${username}
+    nomeRemetente: 'Notificação'
+
+server:
+  port: 8082
