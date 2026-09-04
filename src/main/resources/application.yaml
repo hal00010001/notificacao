@@ -1,12 +1,13 @@
 spring:
   application:
     name: notificacao
-
+  config:
+    import: optional:file:.env[.properties]
   mail:
     host: smtp.gmail.com
     port: 587
-    username: ${username}
-    password: ${password}
+    username: ${USERNAME}
+    password: ${PASSWORD}
     protocol: smtp
     properties:
       mail:
@@ -27,7 +28,7 @@ spring:
 
 envio:
   email:
-    remetente: ${username}
+    remetente: ${USERNAME}
     nomeRemetente: 'Notificação'
 
 server:
